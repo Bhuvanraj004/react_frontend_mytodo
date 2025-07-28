@@ -1,72 +1,42 @@
-# Getting Started with Create React App
+# ToDo
+The To-Do List App is a productivity-focused web application built using React.js. It allows users to manage their daily tasks efficiently by adding, editing, completing, deleting, and organizing to-dos.
+# 📝 Full Stack To-Do List App (React + Node + MongoDB)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a **Full Stack To-Do List Web Application** built using **React.js** for the frontend and **Node.js, Express.js, and MongoDB** for the backend. The app allows users to add, edit, delete, and search tasks. It also supports due date highlighting, localStorage persistence, progress tracking, and voice input using the Web Speech API.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🛠️ Installation & Setup Instructions
+⚙️ Backend Installation (Inside backend/ folder)
+Run these commands inside the backend directory to install the required Node.js packages:
 
-### `npm start`
+bash
+Copy
+Edit
+cd backend
+npm init -y
+npm install express mongoose cors dotenv
+✅ Installed packages:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+express: To build the RESTful API server.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+mongoose: To connect and interact with MongoDB.
 
-### `npm test`
+cors: To enable Cross-Origin Resource Sharing.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+dotenv: To manage environment variables via .env file.
 
-### `npm run build`
+💻 Frontend Installation (Root folder, React project)
+Run this in the root folder where your React project was created:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+bash
+Copy
+Edit
+npm install react react-dom
+✅ Installed packages:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+react: Core React library for building UI.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+react-dom: DOM-specific methods for rendering React components.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-# my_TODO_app
