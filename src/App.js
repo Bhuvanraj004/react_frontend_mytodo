@@ -3,17 +3,18 @@ import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
 import './App.css';
 
-
-
 function App() {
   const [todos, setTodos] = useState([]);
   const [darkTheme, setDarkTheme] = useState(false);
   const [draggingIndex, setDraggingIndex] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [listening, setListening] = useState(false);
+
+  const API_BASE = 'https://todo-backend-1-ijy4.onrender.com';
+
   // Fetch todos from backend on mount
   useEffect(() => {
-    fetch('http://localhost:5000/api/todos')
+    fetch(`${API_BASE}/api/todos`)
       .then(res => res.json())
       .then(data => setTodos(data))
       .catch(err => console.error('Error fetching todos:', err));
@@ -22,7 +23,7 @@ function App() {
   // Add todo (POST)
   const addTodo = async (text, dueDate, category, subtasks = []) => {
     const newTodo = { text, dueDate, category, completed: false, subtasks };
-    const res = await fetch('http://localhost:5000/api/todos', {
+    const res = await fetch(`${API_BASE}/api/todos`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(newTodo)
@@ -35,7 +36,7 @@ function App() {
   const toggleTodo = async (index) => {
     const todo = todos[index];
     const updated = { ...todo, completed: !todo.completed };
-    const res = await fetch(`http://localhost:5000/api/todos/${todo._id}`, {
+    const res = await fetch(`${API_BASE}/api/todos/${todo._id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(updated)
@@ -49,13 +50,12 @@ function App() {
   // Delete todo (DELETE)
   const deleteTodo = async (index) => {
     const todo = todos[index];
-    await fetch(`http://localhost:5000/api/todos/${todo._id}`, {
+    await fetch(`${API_BASE}/api/todos/${todo._id}`, {
       method: 'DELETE'
     });
     setTodos(todos.filter((_, i) => i !== index));
   };
 
-  
   // Voice input logic
   const handleVoiceInput = () => {
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -98,8 +98,6 @@ function App() {
   useEffect(() => {
     localStorage.setItem('todoAppTasks', JSON.stringify(todos));
   }, [todos]);
-
-  
 
   const handleThemeToggle = () => {
     setDarkTheme((prev) => {
@@ -196,6 +194,6 @@ function App() {
       />
     </div>
   );
-  
 }
+
 export default App;
