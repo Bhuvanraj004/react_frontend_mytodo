@@ -1,2 +1,2 @@
-const API_BASE = process.env.REACT_APP_API || 'https://todo-backend-1-ijy4.onrender.com';
+const API_BASE = process.env.REACT_APP_API_BASE || 'http://localhost:5000';
 export default API_BASE;
